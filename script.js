@@ -112,6 +112,7 @@ function getPasswordOptions() {
 
   if (length > 128) {
     alert("Password lenght must be less than 129 characters");
+    return;
     
   }
 
@@ -119,6 +120,12 @@ function getPasswordOptions() {
   var addNumericCharacters = confirm("Would you like to include numerics characters?");
   var addLowerCharacters = confirm("Would you like to include lowercase characters?");
   var addUpperCharacters = confirm("Would you like to include upper characters?");
+
+  if (addSpecialCharacters === false && addNumericCharacters === false && addLowerCharacters === false && addUpperCharacters === false) {
+    alert("Must contain at least one option");
+    return;
+  }
+  
 
 }
 
