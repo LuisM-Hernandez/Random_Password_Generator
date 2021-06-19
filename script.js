@@ -74,63 +74,88 @@ function getPasswordOptions() {
     alert("Must contain at least one option");
   }
 
-  //Special Characters choices
+  //User choices
+
+  //Single Option
   if (addSpecialCharacters) {
     //userChoice variable will now hold what the user choose as options for his password and if chosen more than one it will merge the arrays creating a new one with the options chosen.
     userChoice = special
         
   }
+
+  if (addNumericCharacters) {
+    userChoice = numeric
+        
+  }
+  if (addLowerCharacters) {
+    userChoice = lower
+        
+  }
+
+  if (addUpperCharacters) {
+    userChoice = upper
+        
+  }
+
+  //Double Option
   if (addSpecialCharacters && addNumericCharacters) {
     userChoice = special.concat(numeric)
         
   }
 
-  if (addSpecialCharacters && addNumericCharacters && addLowerCharacters) {
-    userChoice = special.concat(numeric, lower);
+  if (addLowerCharacters && addSpecialCharacters) {
+    userChoice = lower.concat(special)
         
   }
 
-  if (addSpecialCharacters && addNumericCharacters && addLowerCharacters&& addUpperCharacters) {
-    userChoice = special.concat(numeric, lower, upper);
-  }
-
-  //Numeric Characters choices
-  if (addNumericCharacters) {
-    userChoice = numeric
+  if (addUpperCharacters && addSpecialCharacters) {
+    userChoice = upper.concat(special)
         
   }
+
   if (addNumericCharacters && addLowerCharacters) {
     userChoice = numeric.concat(lower)
         
   }
-
-  if (addNumericCharacters && addLowerCharacters && addUpperCharacters) {
-    userChoice = numeric.concat(lower, upper);
+  if (addNumericCharacters && addUpperCharacters) {
+    userChoice = numeric.concat(upper)
         
   }
 
-  //Lower Characters choices
-  if (addLowerCharacters) {
-    userChoice = lower
-        
-  }
   if (addLowerCharacters && addUpperCharacters) {
     userChoice = lower.concat(upper)
         
   }
 
-  if (addLowerCharacters && addSpecialCharacters ) {
-    userChoice = lower.concat(special);
-        
+  //Three Options
+
+  if (addSpecialCharacters && addNumericCharacters && addLowerCharacters) {
+    userChoice = special.concat(numeric,lower)
+    
+  }
+  if (addSpecialCharacters && addLowerCharacters && addUpperCharacters) {
+    userChoice = special.concat(lower,upper)
+    
   }
 
-  //Upper Characters choices
-  if (addUpperCharacters) {
-    userChoice = upper
-        
+  if (addSpecialCharacters && addNumericCharacters && addUpperCharacters) {
+    userChoice = special.concat(numeric,upper)
+    
   }
-  if (addUpperCharacters && addSpecialCharacters) {
-    userChoice = upper.concat(special)
+
+  if (addNumericCharacters && addLowerCharacters && addUpperCharacters) {
+    userChoice = numeric.concat(lower,upper)
+    
+  }
+  
+  if (addNumericCharacters && addLowerCharacters && addUpperCharacters) {
+    userChoice = numeric.concat(lower,upper)
+    
+  }
+
+  if (addSpecialCharacters && addNumericCharacters && addLowerCharacters && addUpperCharacters) {
+    userChoice = special.concat(numeric, lower, upper)
+    
   }
 
   //For loop that checks if the quantity variable and loops through it.
