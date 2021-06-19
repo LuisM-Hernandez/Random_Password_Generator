@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
   </head>
-  <body>
+  <body class="bg-indigo-200 font-serif" >
 
     <div class="wrapper">
 
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-
-      <div class="card">
+      <div class="max-w-screen-lg bg-white shadow-2xl rounded-lg mx-auto text-center py-12  mb-5 bg-gradient-to-r from-blue-200 via-purple-500 to-indigo-200">
+        <h1 class="grid justify-items-center text-black text-3xl underline text-white">Password Generator!</h1>
+      </div>
+      
+      <div class="card bg-indigo-500 text-white mix-blend-luminosity	">
         <div class="card-header">
 
-          <h2>Generate a Password</h2>
+          <h2 class=" text-3xl pb-8 ">Generate a Password</h2>
 
         </div>
 
@@ -29,13 +31,14 @@
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
+            class="text-black"
           ></textarea>
 
         </div>
 
         <div class="card-footer">
 
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn bg-purple-600  hover:bg-purple-800 focus:outline-none rounded-full text-xl text-white w-48 h-24 text-opacity-75 mt-3">Generate Password</button>
           
         </div>
       </div>
