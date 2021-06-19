@@ -7,11 +7,7 @@ var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 // Array of uppercase characters to be included in password
 var upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
 
-
-
-// Assignment Code
-
-//Variable will hold user choice
+//Variable will hold users choice
 var userChoice;
 
 //Variable holding the empty array for user generated password
@@ -23,10 +19,12 @@ var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
 
+  // Variable options will hold the getPasswordFunction and return it
   var options = getPasswordOptions();
 
   return options;
 }
+
 // Write password to the #password input
 function writePassword() {
   //Variable password holding the function generatePassword
@@ -42,10 +40,10 @@ generateBtn.addEventListener("click", writePassword);
 
 
 function getPasswordOptions() {
-  //Variable that stores the lenght of the password by users options
+  //Variable that stores the lenght of the password by users options. It is parsed so it can return an integer instead of a string
   var quantity = parseInt(prompt("How many characters would you like your password to contain?"));
 
-  //The global NaN property is a value representing Not-A-Number.
+  // If statement with the condition that if quantity isn't a number it will alert errors
    if (!quantity) {
     alert('Password quantity must be provided as a number');
     return;
@@ -62,6 +60,7 @@ function getPasswordOptions() {
     
   }
 
+  //Else holding variables to confirm options that the user will be prompted
   else{
     var addSpecialCharacters = confirm("Would you like to include special characters?");
     var addNumericCharacters = confirm("Would you like to include numerics characters?");
@@ -70,13 +69,14 @@ function getPasswordOptions() {
     
   }
 
-
+  //If statement that alerts if no option was chosen
   if (!addSpecialCharacters && !addNumericCharacters  && !addLowerCharacters  && !addUpperCharacters) {
     alert("Must contain at least one option");
   }
 
   //Special Characters choices
   if (addSpecialCharacters) {
+    //userChoice variable will now hold what the user choose as options for his password and if chosen more than one it will merge the arrays creating a new one with the options chosen.
     userChoice = special
         
   }
@@ -133,12 +133,14 @@ function getPasswordOptions() {
     userChoice = upper.concat(special)
   }
 
+  //For loop that checks if the quantity variable and loops through it.
   for (var i = 0; i < quantity; i++) {
+    // Variable random will take the userChoice and using Math.Floor and Math.Random will go through out the length of the new array and choose from the arrays to create a new one.
     var random = userChoice[Math.floor(Math.random() * userChoice.length)];
-    // The array we called answer will get every selection made by the random variable and push it to his array
+    //The random variable created above will now have the userChoice array and will be pushed to userPass empty array using the .push method
     userPass.push(random);
   }
-// This variable result will return the array answer as a string using the .join method
+  //The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string.
   var result = userPass.join("");
 
   return result;
