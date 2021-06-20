@@ -1,27 +1,27 @@
-*,
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} */
 
-html,
+/* html,
 body,
 .wrapper {
   height: 100%;
   margin: 0;
   padding: 0;
-}
+} */
 
-body {
+/* body {
   font-family: sans-serif;
   background-color: #f9fbfd;
-}
+} */
 
-.wrapper {
+/* .wrapper {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
-}
+} */
 
 /* header {
   text-align: center;
@@ -30,7 +30,7 @@ body {
   color: hsl(206, 17%, 28%);
 } */
 
-.card {
+/* .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
   border-width: 1px;
@@ -40,7 +40,7 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 30px 40px;
-}
+} */
 
 .card-header::after {
   content: " ";
@@ -50,13 +50,13 @@ body {
   height: 2px;
 }
 
-.card-body {
+/* .card-body {
   min-height: 100px;
-}
+} */
 
-.card-footer {
+/* .card-footer {
   text-align: center;
-}
+} */
 
 .card-footer::before {
   content: " ";
@@ -66,14 +66,14 @@ body {
   height: 2px;
 }
 
-.card-footer::after {
+/* .card-footer::after {
   content: " ";
   display: block;
   clear: both;
-}
+} */
 
-.btn {
-  /* border: none;
+/* .btn {
+  border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
@@ -85,17 +85,17 @@ body {
   margin: 16px 16px 16px 20px;
   padding: 14px 34px;
   text-align: center;
-  cursor: pointer; */
-}
+  cursor: pointer;
+} */
 
-button[disabled] {
+/* button[disabled] {
   cursor: default;
   background: #c0c7cf;
-}
+} */
 
-.float-right {
+/* .float-right {
   float: right;
-}
+} */
 
 #password {
   -webkit-appearance: none;
@@ -130,8 +130,8 @@ button[disabled] {
   }
 } */
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
   }
-}
+} */
